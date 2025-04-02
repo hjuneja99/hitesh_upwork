@@ -17,12 +17,15 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 # Copy the rest of the application code.
 COPY . /app
 
-# Expose the ports: 8000 for HTTP and 9083 for WebSocket.
-EXPOSE 8000 9083
-
-# Copy and make the startup script executable (if you're using one)
+# Copy and make the startup script executable
 COPY start.sh /app/start.sh
 RUN chmod +x /app/start.sh
 
+# Debug: List permissions for start.sh to verify it's executable
+RUN ls -l /app/start.sh
+
+# Expose the ports: 8000 for HTTP and 9083 for WebSocket.
+EXPOSE 8000 9083
+
 # Use the startup script as the container's entrypoint.
-CMD ["/app/start.sh"]
+CMD ["/bin/bash", "/app/start.sh"]
