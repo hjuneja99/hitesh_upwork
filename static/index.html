@@ -92,7 +92,7 @@
     // For local testing, use ws://localhost:8000/ws; update for production
     const URL = window.location.hostname === "localhost"
       ? "ws://localhost:8000/ws"
-      : "wss://your-public-domain/ws";
+      : "wss://https://tremendous-clemence-hiteshupwork-5ffb0279.koyeb.app/ws";
 
     const video = document.getElementById("videoElement");
     const canvas = document.getElementById("canvasElement");
@@ -100,7 +100,7 @@
 
     window.addEventListener("load", () => {
       context = canvas.getContext("2d");
-      setInterval(captureImage, 3000);
+      setInterval(captureImage, 3000)
     });
 
     const startButton = document.getElementById('startButton');
@@ -158,7 +158,9 @@
       webSocket = new WebSocket(URL);
 
       webSocket.onopen = (event) => {
-        console.log("WebSocket open:", event);
+        console.log("WebSocket open:", ev
+                    
+                    ent);
         sendInitialSetupMessage();
       };
 
