@@ -158,9 +158,7 @@
       webSocket = new WebSocket(URL);
 
       webSocket.onopen = (event) => {
-        console.log("WebSocket open:", ev
-                    
-                    ent);
+        console.log("WebSocket open:", event);
         sendInitialSetupMessage();
       };
 
